@@ -655,7 +655,7 @@
                                 </div>
                             </div>
                             <p class="product-price">¥${goods.out_price}</p>
-                            <a href="addCart?id=${goods.id}" class="btn add-to-cart">
+                            <a href="/session?id=${goods.id}" class="btn add-to-cart">
                                 <i class="fas fa-cart-plus"></i> 加入购物车
                             </a>
                         </div>
