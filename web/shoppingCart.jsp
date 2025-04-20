@@ -34,8 +34,8 @@
     <%--    <c:out value="${sessionScope.goodsList[0].goods.imgUrl}"/>--%>
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <%-- 判断购物车是否为空, 若为空, 则显示此处 --%>
-            <c:if test="${empty sessionScope.goodsList}">
+            <%--判断购物车是否为空，若为空，则显示此处--%>
+            <c:if test="${empty sessionScope.cart}">
                 <div class="jumbotron">
                     <h3>
                         您还没有购买任何商品!
@@ -48,40 +48,21 @@
                 </div>
             </c:if>
             
-            <%-- 若购物车不为空, 则显示表格 --%>
-            <c:if test="${not empty sessionScope.goodsList}">
+            <%--若购物车不为空，则显示表格--%>
+            <c:if test="${not empty sessionScope.cart}">
                 <table class="table">
-                <thead>
-                <tr>
-                    <th>
-                        <input type="checkbox" id="checkAll">
-                    </th>
-                    <th>
-                        图片
-                    </th>
-                    <th>
-                        描述
-                    </th>
-                    <th>
-                        属性
-                    </th>
-                    <th>
-                        价格(￥)
-                    </th>
-                    <th>
-                        数量
-                    </th>
-                    <th>
-                        小计
-                    </th>
-                    <th>
-                        操作
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
+                    <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" id="checkAll">
+                        </th>
+                        <th>
+                            图片
+                        </th>
+                    </thead>
+                    <tbody>
                 <!-- 购物车数据 -->
-                <c:forEach items="${sessionScope.goodsList}" var="item">
+                <c:forEach items="${sessionScope.cart}" var="item">
                     <tr class="rowData">
                         <td>
                             <input type="checkbox" class="ck">
@@ -145,7 +126,6 @@
                 </tr>
                 </tbody>
             </table>
-            </c:if>
         </div>
     </div>
 </div>
