@@ -29,12 +29,50 @@ public class SessionServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 接收String的ID, 转int
+        int id = Integer.parseInt(req.getParameter("id"));
+        
 //      购物项
         GoodsItem goodsItem = null;
 //        商品
         Goods goods = null;
 //        获取session对象
         HttpSession session = req.getSession();
+        
+//        从session中拿到购物车数据
+        List<GoodsItem> cart = (List<GoodsItem>) session.getAttribute("cart");
+//        若购物车数据为空，则代表第一次购物，生成购物车
+        if (cart == null) {
+            cart = new ArrayList<>();
+        }
+
+        // 定义标志变量，标记商品是否已在购物车中
+        boolean flag = false;
+        
+        // 遍历购物车，看是否有同品，将该商品数量+1
+        for (GoodsItem g : cart) {
+            if (g.getGoodsId() == id) {
+                // 若有同品，获取该品
+                goodsItem = g;
+                // 修改标志
+                flag = true;//标记已找到相同商品
+            }
+        }
+        
+        // 根据标志决定是数量+1，还是新生成购物项，并添加到购物车中
+        if (flag) {
+            goodsItem.setNum(goodsItem.getNum() + 1);
+        } else {
+            GoodsItem goodsItem1 = new GoodsItem();
+            goodsItem1.setNum(1);
+            goodsItem1.setGoods(gsi.findById(id));
+            goodsItem1.setGoodsId(id);
+            cart.add(goodsItem1);
+        }
+        
+        // 将购物车写入session
+        session.setAttribute("cart", cart);
+
 //        生成购物项列表
         List<GoodsItem> goodsItemList = new ArrayList<>();
 //        生成购物项数据并添加进列表

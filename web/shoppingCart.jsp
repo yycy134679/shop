@@ -34,18 +34,23 @@
     <%--    <c:out value="${sessionScope.goodsList[0].goods.imgUrl}"/>--%>
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <div class="jumbotron">
-                <h3>
-                    您还没有购买任何商品!
-                </h3>
-                <p>
-                </p>
-                <p>
-                    <a class="btn btn-primary btn-large" href="<c:url value="/index"/>">去购物</a>
-                </p>
-            </div>
-
-            <table class="table">
+            <%-- 判断购物车是否为空, 若为空, 则显示此处 --%>
+            <c:if test="${empty sessionScope.goodsList}">
+                <div class="jumbotron">
+                    <h3>
+                        您还没有购买任何商品!
+                    </h3>
+                    <p>
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="<c:url value="/index"/>">去购物</a>
+                    </p>
+                </div>
+            </c:if>
+            
+            <%-- 若购物车不为空, 则显示表格 --%>
+            <c:if test="${not empty sessionScope.goodsList}">
+                <table class="table">
                 <thead>
                 <tr>
                     <th>
@@ -140,6 +145,7 @@
                 </tr>
                 </tbody>
             </table>
+            </c:if>
         </div>
     </div>
 </div>
