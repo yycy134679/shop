@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <html lang="zh-CN">
 
@@ -89,7 +90,7 @@
                     <input type="password" class="form-control" id="password" placeholder="请输入密码">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">登录</button>
-                <p>还没有账号<a href="reg.jsp">去注册</a> </p>
+                <p>还没有账号<a href="<c:url value="/reg"/>">去注册</a> </p>
             </form>
         </div>
 

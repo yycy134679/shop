@@ -545,9 +545,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link cart-icon" href="#">
+                    <a class="nav-link cart-icon" href="<c:url value="/session"/>">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-badge">4</span>
+                        <span class="cart-badge"></span>
                     </a>
                 </li>
             </ul>

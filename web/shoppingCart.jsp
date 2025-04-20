@@ -65,6 +65,25 @@
                                                     <th>
                                                         图片
                                                     </th>
+                                                    <th>
+                                                        商品详情
+                                                    </th>
+                                                    <th>
+                                                        规格
+                                                    </th>
+                                                    <th>
+                                                        单价
+                                                    </th>
+                                                    <th>
+                                                        数量
+                                                    </th>
+                                                    <th>
+                                                        小计
+                                                    </th>
+                                                    <th>
+                                                        操作
+                                                    </th>
+                                                </tr>
                                             </thead>
                                             <tbody>
                                                 <!-- 购物车数据 -->
@@ -102,7 +121,7 @@
                                                             <button class="plus">+</button>
                                                         </td>
                                                         <td>
-                                                            <span class="xj">23.00</span>
+                                                            <span class="xj">${item.goods.out_price * item.num}</span>
                                                         </td>
                                                         <td>
                                                             <span class="del">删除</span>
@@ -136,6 +155,7 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                    </c:if>
                         </div>
                     </div>
             </div>
@@ -233,6 +253,18 @@
                         }
                     });
                 });
+
+                // 页面加载完成后自动计算所有小计和总价
+                $(document).ready(function () {
+                    // 初始化所有小计
+                    $(".rowData").each(function () {
+                        var price = parseFloat($(this).find(".price").html());
+                        var num = parseInt($(this).find("input[name='num']").val());
+                        $(this).find(".xj").html((price * num).toFixed(2));
+                    });
+
+                    // 初始化总价
+                    zj();
+                });
             });
         </script>
-        </c:if>
