@@ -97,6 +97,6 @@ public class SessionServlet extends HttpServlet {
         // 将购物项列表数据写入session（此对象可以跨域保存数据）
         session.setAttribute("goodsList", goodsItemList);
         // 转至购物车页
-        req.getRequestDispatcher("shoppingCart.jsp").forward(req, resp);
+        req.getRequestDispatcher("/index").forward(req, resp);
     }
 }

@@ -545,7 +545,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link cart-icon" href="<c:url value=" /session" />">
+                                    <a class="nav-link cart-icon" href="<c:url value="shoppingCart.jsp" />">
                                     <i class="fas fa-shopping-cart"></i>
                                     </a>
                                 </li>
