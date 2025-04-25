@@ -547,6 +547,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link cart-icon" href="<c:url value="shoppingCart.jsp" />">
                                     <i class="fas fa-shopping-cart"></i>
+                                    <span class="cart-badge">
+                                        <c:choose>
+                                            <c:when test="${sessionScope.cart==null}">
+                                                0
+                                            </c:when>
+                                            <c:otherwise>
+                                                ${sessionScope.cart.size()}
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </span>
                                     </a>
                                 </li>
                             </ul>
@@ -570,7 +580,7 @@
                                         class="d-block w-100" alt="鲜花展示">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h2>春季花卉特惠</h2>
-                                        <p>精选春季花卉，为您带来自然的芬芳</p>
+                                        <p>精选春季花卉，为您带来自然的芳香</p>
                                     </div>
                                 </div>
                                 <div class="carousel-item">

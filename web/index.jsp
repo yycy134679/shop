@@ -553,7 +553,7 @@
                                                 0
                                             </c:when>
                                             <c:otherwise>
-                                                ${sessionScope.cart.size()}
+                                                ${sessionScope.cart.size()}  //动态获取购物车数量
                                             </c:otherwise>
                                         </c:choose>
                                     </span>
