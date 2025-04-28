@@ -264,6 +264,7 @@
                         overflow: hidden;
                         display: -webkit-box;
                         -webkit-line-clamp: 2;
+                        line-clamp: 2;
                         -webkit-box-orient: vertical;
                     }
 
@@ -553,7 +554,7 @@
                                                 0
                                             </c:when>
                                             <c:otherwise>
-                                                ${sessionScope.cart.size()}
+                                                ${sessionScope.cart.size()}  //动态获取购物车数量
                                             </c:otherwise>
                                         </c:choose>
                                     </span>
