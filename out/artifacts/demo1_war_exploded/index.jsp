@@ -500,11 +500,57 @@
                             justify-content: center;
                         }
                     }
+
+                    /* 提示消息样式 */
+                    .alert-message {
+                        position: fixed;
+                        top: 80px;
+                        right: 20px;
+                        z-index: 9999;
+                        max-width: 350px;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                        border-radius: 8px;
+                        animation: slideIn 0.5s ease-out forwards, fadeOut 0.5s 5s forwards;
+                    }
+
+                    @keyframes slideIn {
+                        from {
+                            transform: translateX(100%);
+                            opacity: 0;
+                        }
+
+                        to {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+
+                    @keyframes fadeOut {
+                        from {
+                            opacity: 1;
+                        }
+
+                        to {
+                            opacity: 0;
+                            display: none;
+                        }
+                    }
                 </style>
 
             </head>
 
             <body>
+                <!-- 提示消息组件 -->
+                <c:if test="${not empty param.message}">
+                    <div
+                        class="alert-message alert 
+                    ${param.msgType eq 'success' ? 'alert-success' : param.msgType eq 'warning' ? 'alert-warning' : 'alert-danger'}">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>${param.msgType eq 'success' ? '成功' : param.msgType eq 'warning' ? '警告' :
+                            '错误'}!</strong> ${param.message}
+                    </div>
+                </c:if>
+
                 <!-- 导航栏 -->
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container">
@@ -546,7 +592,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link cart-icon" href="<c:url value="shoppingCart.jsp" />">
+                                    <a class="nav-link cart-icon" href="<c:url value=" shoppingCart.jsp" />">
                                     <i class="fas fa-shopping-cart"></i>
                                     <span class="cart-badge">
                                         <c:choose>
@@ -554,7 +600,7 @@
                                                 0
                                             </c:when>
                                             <c:otherwise>
-                                                ${sessionScope.cart.size()}  //动态获取购物车数量
+                                                ${sessionScope.cart.size()} //动态获取购物车数量
                                             </c:otherwise>
                                         </c:choose>
                                     </span>
@@ -775,6 +821,21 @@
                 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+                <script>
+                    // 处理提示消息
+                    $(document).ready(function () {
+                        // 5秒后自动关闭提示消息
+                        setTimeout(function () {
+                            $('.alert-message').fadeOut('slow');
+                        }, 5000);
+
+                        // 点击关闭按钮立即关闭提示消息
+                        $('.alert-message .close').click(function () {
+                            $(this).parent().fadeOut('fast');
+                        });
+                    });
+                </script>
             </body>
 
             </html>
