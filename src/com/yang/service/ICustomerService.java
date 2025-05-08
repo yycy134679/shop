@@ -29,4 +29,13 @@ public interface ICustomerService {
      * @return 客户信息
      */
     Customer findByUsername(String username);
+
+    /**
+     * 用户登录
+     * 
+     * @param username 用户名
+     * @param password 密码
+     * @return 登录成功返回客户信息，失败返回null
+     */
+    Customer login(String username, String password);
 }

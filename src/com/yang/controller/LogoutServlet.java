@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/infoCenter")
-public class InfoCenterServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/logout")
+public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
@@ -16,13 +16,10 @@ public class InfoCenterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 检查用户是否已登录
-        if (req.getSession().getAttribute("customer") == null) {
-            // 未登录，重定向到登录页面
-            req.getRequestDispatcher("/login").forward(req, resp);
-        } else {
-            // 已登录，转发到个人中心页面
-            req.getRequestDispatcher("infoCenter.jsp").forward(req, resp);
-        }
+        // 使session失效，清除用户登录信息
+        req.getSession().invalidate();
+
+        // 重定向到首页
+        resp.sendRedirect("/index");
     }
 }

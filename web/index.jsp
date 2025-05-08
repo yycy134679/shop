@@ -586,24 +586,41 @@
                                 </div>
                             </form>
                             <ul class="navbar-nav action-icons">
+                                <c:choose>
+                                    <c:when test="${sessionScope.customer==null}">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/login">登录</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/reg">注册</a>
+                                        </li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/login">欢迎您：${sessionScope.customer.username}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/logout">退出</a>
+                                        </li>
+                                    </c:otherwise>
+                                </c:choose>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="http://localhost:8080/login">
-                                        <i class="fas fa-user"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link cart-icon" href="<c:url value=" shoppingCart.jsp" />">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span class="cart-badge">
-                                        <c:choose>
-                                            <c:when test="${sessionScope.cart==null}">
-                                                0
-                                            </c:when>
-                                            <c:otherwise>
-                                                ${sessionScope.cart.size()} //动态获取购物车数量
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </span>
+                                    <a class="nav-link cart-icon" href="/shopCart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span class="cart-badge">
+                                            <c:choose>
+                                                <c:when test="${sessionScope.cart==null}">
+                                                    0
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <c:set var="totalItems" value="0" />
+                                                    <c:forEach items="${sessionScope.cart}" var="item">
+                                                        <c:set var="totalItems" value="${totalItems + item.num}" />
+                                                    </c:forEach>
+                                                    ${totalItems}
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </span>
                                     </a>
                                 </li>
                             </ul>

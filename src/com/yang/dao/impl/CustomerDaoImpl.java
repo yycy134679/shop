@@ -54,6 +54,38 @@ public class CustomerDaoImpl extends Db implements ICustomerDao {
     }
 
     @Override
+    public Customer login(String username, String password) {
+        String sql = "select * from customer where username=? and pass=?";
+        Customer customer = null;
+        try {
+            prst = conn.prepareStatement(sql);
+            prst.setString(1, username);
+            prst.setString(2, password);
+            rs = prst.executeQuery();
+            // 展开结果集数据库
+            if (rs.next()) {
+                customer = new Customer();
+                customer.setId(rs.getInt("id"));
+                customer.setUsername(rs.getString("username"));
+                customer.setPass(rs.getString("pass"));
+                customer.setTel(rs.getString("tel"));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                if (rs != null)
+                    rs.close();
+                if (prst != null)
+                    prst.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return customer;
+    }
+
+    @Override
     public List<Customer> findByProp(HashMap<String, Object> prop) {
         Customer customer = null;
         List<Customer> customerList = new ArrayList<>();
