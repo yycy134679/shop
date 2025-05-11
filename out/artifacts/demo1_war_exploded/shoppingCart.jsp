@@ -48,8 +48,7 @@
                                         <p>
                                         </p>
                                         <p>
-                                            <a class="btn btn-primary btn-large" href="<c:url value="
-                                                /index" />">去购物</a>
+                                            <a class="btn btn-primary btn-large" href="index">去购物</a>
                                         </p>
                                     </div>
                                 </c:if>

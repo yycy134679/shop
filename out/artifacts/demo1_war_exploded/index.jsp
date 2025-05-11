@@ -600,12 +600,12 @@
                                             <a class="nav-link" href="login">欢迎您：${sessionScope.customer.username}</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/logout">退出</a>
+                                            <a class="nav-link" href="logout">退出</a>
                                         </li>
                                     </c:otherwise>
                                 </c:choose>
                                 <li class="nav-item">
-                                    <a class="nav-link cart-icon" href="/shopCart">
+                                    <a class="nav-link cart-icon" href="shopCart">
                                         <i class="fas fa-shopping-cart"></i>
                                         <span class="cart-badge">
                                             <c:choose>
@@ -728,7 +728,7 @@
                                                 </div>
                                             </div>
                                             <p class="product-price">¥${goods.out_price}</p>
-                                            <a href="/session?id=${goods.id}" class="btn add-to-cart">
+                                            <a href="session?id=${goods.id}" class="btn add-to-cart">
                                                 <i class="fas fa-cart-plus"></i> 加入购物车
                                             </a>
                                         </div>

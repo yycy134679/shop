@@ -126,8 +126,7 @@
                     </div>
                     <% } %>
 
-                        <form class="mt-4" action="${pageContext.request.contextPath}/doReg" method="POST"
-                            id="registerForm">
+                        <form class="mt-4" action="doReg" method="POST" id="registerForm">
                             <div class="form-group">
                                 <label for="username">账号*</label>
                                 <div class="input-group">
@@ -172,7 +171,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-block" id="submitBtn">注册</button>
-                            <p>已有账号<a href="${pageContext.request.contextPath}/login">去登录</a> </p>
+                            <p>已有账号<a href="login">去登录</a> </p>
                         </form>
             </div>
 
@@ -202,7 +201,7 @@
 
                         // 使用AJAX请求检查用户名是否可用
                         $.ajax({
-                            url: '${pageContext.request.contextPath}/checkUsername',
+                            url: 'checkUsername',
                             method: 'POST',
                             data: { username: username },
                             success: function (response) {
