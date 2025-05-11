@@ -589,15 +589,15 @@
                                 <c:choose>
                                     <c:when test="${sessionScope.customer==null}">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/login">登录</a>
+                                            <a class="nav-link" href="login">登录</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/reg">注册</a>
+                                            <a class="nav-link" href="reg">注册</a>
                                         </li>
                                     </c:when>
                                     <c:otherwise>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/login">欢迎您：${sessionScope.customer.username}</a>
+                                            <a class="nav-link" href="login">欢迎您：${sessionScope.customer.username}</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="/logout">退出</a>

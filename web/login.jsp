@@ -96,7 +96,7 @@
                     </div>
                 </c:if>
 
-                <form class="form-horizontal" role="form" action="/doLogin" method="post">
+                <form class="form-horizontal" role="form" action="doLogin" method="post">
                     <div class="form-group">
                         <input type="text" name="username" class="form-control" id="inputEmail3" placeholder="账号/手机/邮箱"
                             required />
@@ -108,7 +108,7 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-default btn-block btn-primary">登 录</button>
                     </div>
-                    <p>还没有账号<a href="<c:url value=" /reg" />">去注册</a> </p>
+                    <p>还没有账号<a href="reg">去注册</a> </p>
                 </form>
             </div>
 
