@@ -1,6 +1,7 @@
 package com.yang.controller;
 
-import com.yang.dao.impl.GoodsServiceImpl;
+import com.yang.service.impl.GoodsServiceImpl;
+import com.yang.service.IGoodsService;
 import com.yang.entity.Goods;
 import com.yang.entity.GoodsItem;
 import javax.servlet.*;
@@ -19,8 +20,9 @@ import java.util.List;
  */
 @WebServlet(urlPatterns = "/session")
 public class SessionServlet extends HttpServlet {
-    // 调用服务层
-    GoodsServiceImpl gsi = new GoodsServiceImpl();
+    // 获取GoodsService对象
+    // 推荐使用接口类型进行声明
+    private IGoodsService goodsServcie = new GoodsServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -77,7 +79,7 @@ public class SessionServlet extends HttpServlet {
             } else {
                 GoodsItem goodsItem1 = new GoodsItem();
                 goodsItem1.setNum(1);
-                goodsItem1.setGoods(gsi.findById(id));
+                goodsItem1.setGoods(goodsServcie.findById(id));
                 goodsItem1.setGoodsId(id);
                 cart.add(goodsItem1);
             }

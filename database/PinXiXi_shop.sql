@@ -102,9 +102,8 @@ https://web.hocom.tw/Uploads/Product/378914_cdb7qmkj.jpg,
 https://web.hocom.tw/Uploads/Product/31368_405576_jweabgbx.jpg', 2389),
 
 ('纯白百合花束', '优雅纯洁的白色百合花束，5朵精选东方百合，搭配适量绿叶点缀，简约大方，清新淡雅，适合送恋人、朋友或家人，表达美好祝愿。', '纯洁、高贵、祝福、美好的祝愿、庄重、神圣、思念', 199.00, 
-'https://www.flowerdj.com/x/images/product/AE/AE435_x.webp', 
-'https://static.iyp.tw/33109/products/photooriginal-2470105-bWgH9.jpg,
-https://iconflorist.com/wp-content/uploads/2023/09/%E7%99%BE%E5%90%88%E8%8A%B1%EF%BC%8C%E7%99%BE%E5%90%88%E8%8A%B1%E6%9D%9F%EF%BC%8C%E7%99%BE%E5%90%88%E8%8A%B1%E8%8A%B1%E6%9D%9F202309271.webp,
+'https://static.iyp.tw/33109/products/photooriginal-2470105-bWgH9.jpg', 
+'https://iconflorist.com/wp-content/uploads/2023/09/%E7%99%BE%E5%90%88%E8%8A%B1%EF%BC%8C%E7%99%BE%E5%90%88%E8%8A%B1%E6%9D%9F%EF%BC%8C%E7%99%BE%E5%90%88%E8%8A%B1%E8%8A%B1%E6%9D%9F202309271.webp,
 https://moon-florist.com/wp-content/uploads/2023/06/2-7.jpg,
 https://www.flowerdj.com/x/images/product/AF/AF093_x.webp', 1856),
 
@@ -136,7 +135,7 @@ https://thumbs.dreamstime.com/b/%E7%BA%A2%E8%89%B2%E6%B7%B7%E5%90%88%E8%8A%B1%E6
 https://www.999florist.com/424-large_default/%E7%B2%89%E7%8E%AB%E7%91%B0%E7%99%BE%E5%90%88%E6%B7%B7%E5%90%88%E8%8A%B1%E6%9D%9F-a148.webp', 2789),
 
 ('红玫瑰花束', 'GlobalRose 100支红玫瑰花束，精选优质厄瓜多尔长茎玫瑰，枝长50cm，色泽饱满，4捆包装每捆25支，专业保鲜处理，送女友、求婚、周年纪念的完美选择。', '热恋、爱情、热情、真爱、贞节、美丽、勇敢', 359.00, 
-'https://m.media-amazon.com/images/I/71kjhdMEXxL._AC_UL320_.jpg', 
+'https://bed.djxs.xyz/file/BQACAgUAAyEGAASVl6k_AAOAaCSGaGOWUwW18JIYZJXWh2n_s-YAAiskAAJXAyBVvuCabrNO2fs2BA.png', 
 'https://m.media-amazon.com/images/I/61NbKDmvHTL._AC_UL320_.jpg,
 https://m.media-amazon.com/images/I/61uLX-Xoo+L._AC_UL320_.jpg,
 https://m.media-amazon.com/images/I/81H+5EeTkpL._AC_UL320_.jpg', 1289),
